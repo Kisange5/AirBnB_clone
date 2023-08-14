@@ -18,6 +18,8 @@ class BaseModel:
                     self.__dict__[key] = datetime.fromisoformat(value)
                 else:
                     self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
     def __str__(self):
         """string output representation of the class"""
@@ -26,6 +28,7 @@ class BaseModel:
     def save(self):
         """saves the instance of the class"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of __dict__"""

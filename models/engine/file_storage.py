@@ -4,12 +4,12 @@
 
 import json
 from models.base_model import BaseModel
-from models.state import State
+"""from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
-from models.user import User
+from models.user import User"""
 
 
 class FileStorage:
@@ -58,7 +58,7 @@ class FileStorage:
         and loads objects.
         If the file doesn't exist, it does nothing.
         """
-        clslist = {
+        """clslist = {
             'BaseModel': BaseModel,
             'State': State,
             'City': City,
@@ -66,7 +66,7 @@ class FileStorage:
             'Place': Place,
             'Review': Review,
             'User': User
-        }
+        }"""
 
         try:
             with open(self.__file_path, "r") as file:
